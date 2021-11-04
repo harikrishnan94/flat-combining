@@ -1,0 +1,15 @@
+#### Core EditorConfig Options ####
+root = true
+
+# Indentation and spacing
+[*]
+indent_style = space
+indent_size = 4
+
+[*.{c,cpp,h,hpp,hxx,cxx,c++}]
+indent_style = space
+indent_size = 2
+
+# Tab indentation (no size specified)
+[Makefile]
+indent_style = tab

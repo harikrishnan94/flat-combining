@@ -1,0 +1,4 @@
+{
+    "clangd.path": "clangd",
+    "C_Cpp.intelliSenseEngine": "Disabled"
+}

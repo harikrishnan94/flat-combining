@@ -1,0 +1,41 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "TestFlatCombining",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${command:cmake.getLaunchTargetDirectory}/TestFlatCombining",
+            "args": [
+                "-d",
+                "yes"
+            ],
+            "environment": [
+                {
+                    "name": "TSAN_OPTIONS",
+                    "value": "abort_on_error=1"
+                },
+                {
+                    "name": "ASAN_OPTIONS",
+                    "value": "abort_on_error=1:detect_leaks=0"
+                }
+            ],
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": false
+                },
+                {
+                    "description": "Enable all-exceptions",
+                    "text": "catch throw",
+                    "ignoreFailures": true
+                }
+            ],
+            "cwd": "${command:cmake.getLaunchTargetDirectory}",
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "cmake",
+            "command": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Generate Compilation Database",
+            "type": "shell",
+            "command": "compdb",
+            "args": [
+                "-p",
+                "${command:cmake.getLaunchTargetDirectory}",
+                "list",
+                ">",
+                "compile_commands_new.json",
+                "&&",
+                "rm",
+                "-rf",
+                "${workspaceFolder}/.cache",
+                "&&",
+                "mv",
+                "compile_commands_new.json",
+                "compile_commands.json"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
