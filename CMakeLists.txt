@@ -43,7 +43,6 @@ endif()
 
 include(SanitizerFlags)
 include(WarningFlags)
-include(GoldLinker)
 
 add_subdirectory(src)
 
