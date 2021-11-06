@@ -16,7 +16,7 @@
             "environment": [
                 {
                     "name": "TSAN_OPTIONS",
-                    "value": "abort_on_error=1"
+                    "value": "abort_on_error=0"
                 },
                 {
                     "name": "ASAN_OPTIONS",

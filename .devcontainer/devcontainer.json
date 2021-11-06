@@ -3,6 +3,10 @@
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
+	"runArgs": [
+		"--security-opt",
+		"seccomp=unconfined"
+	],
 	"extensions": [
 		"vadimcn.vscode-lldb",
 		"ms-vscode.cmake-tools",
